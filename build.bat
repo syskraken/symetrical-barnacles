@@ -202,7 +202,7 @@ copy "%~dp0dist\KrakenPrime.exe" "%RELEASE%\KrakenPrime.exe" >nul
 if exist "%~dp0README.txt" copy "%~dp0README.txt" "%RELEASE%\README.txt" >nul
 
 if exist "%RELEASE%\KrakenPrime.exe" (
-    echo  [OK] Release package assembled (single standalone exe).
+    echo  [OK] Release package assembled - single standalone exe.
 ) else (
     echo  [!] Release package is incomplete - KrakenPrime.exe missing.
 )
