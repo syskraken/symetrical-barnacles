@@ -1,0 +1,7 @@
+customtkinter==6.0.0
+numpy==2.2.6
+opencv-python==4.10.0.84
+Pillow==11.1.0
+pytesseract==0.3.13
+requests==2.32.3
+certifi==2024.8.30
