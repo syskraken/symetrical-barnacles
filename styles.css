@@ -120,6 +120,76 @@ section { padding: 64px 0 90px; }
 .dl-note svg { width: 17px; height: 17px; color: var(--accent); flex-shrink: 0; margin-top: 2px; }
 .dl-note b { color: var(--ink); font-weight: 600; }
 
+/* ---------- Tutorial page ---------- */
+.tut-hero { padding: 60px 0 30px; text-align: center; }
+.tut-hero h1 {
+  font-family: var(--font-display); font-weight: 400;
+  font-size: clamp(2.3rem, 5vw, 3.4rem); line-height: 1.05; letter-spacing: -0.02em;
+  margin: 16px 0 14px;
+}
+.tut-hero .lead { margin-inline: auto; text-align: center; }
+
+/* Section table of contents */
+.tut-toc {
+  display: flex; flex-wrap: wrap; justify-content: center; gap: 10px;
+  padding: 8px 0 20px; margin-bottom: 24px; border-bottom: 1px solid var(--line-soft);
+}
+.tut-toc a {
+  font-size: .86rem; font-weight: 500; color: var(--ink-soft);
+  padding: 7px 15px; border-radius: 999px; border: 1px solid var(--line);
+  transition: border-color .2s, color .2s, background .2s;
+}
+.tut-toc a:hover { color: var(--accent); border-color: var(--accent); background: var(--accent-soft); }
+
+/* Step blocks */
+.tut-steps { display: grid; gap: 30px; padding-top: 10px; }
+.step {
+  background: var(--surface); border: 1px solid var(--line); border-radius: 18px;
+  padding: 30px 32px; box-shadow: 0 20px 50px -34px rgba(60,50,40,0.3);
+  scroll-margin-top: 90px;
+}
+.step-head { display: flex; align-items: center; gap: 14px; margin-bottom: 16px; }
+.step-num {
+  flex-shrink: 0; width: 38px; height: 38px; border-radius: 11px;
+  display: inline-flex; align-items: center; justify-content: center;
+  font-family: var(--font-display); font-size: 1.15rem;
+  color: var(--accent); background: var(--accent-soft);
+}
+.step-head h2 {
+  font-family: var(--font-display); font-weight: 400; letter-spacing: -0.01em;
+  font-size: 1.5rem; line-height: 1.15;
+}
+.step p { color: var(--ink-soft); font-size: .98rem; margin-bottom: 12px; }
+.step p:last-child { margin-bottom: 0; }
+.step ol, .step ul { color: var(--ink-soft); font-size: .98rem; padding-left: 20px; margin-bottom: 12px; display: grid; gap: 7px; }
+.step li { padding-left: 4px; }
+.step b { color: var(--ink); font-weight: 600; }
+.step code {
+  font-family: ui-monospace, 'SF Mono', Menlo, monospace; font-size: .86em;
+  background: var(--raise); border: 1px solid var(--line-soft);
+  padding: 2px 7px; border-radius: 6px; color: var(--ink);
+}
+
+/* Responsive 16:9 video frame */
+.video {
+  position: relative; width: 100%; aspect-ratio: 16 / 9; margin: 6px 0 4px;
+  border-radius: 13px; overflow: hidden; border: 1px solid var(--line);
+  background: var(--raise);
+}
+.video iframe, .video video { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+.video-placeholder {
+  position: absolute; inset: 0; display: flex; flex-direction: column;
+  align-items: center; justify-content: center; gap: 10px;
+  color: var(--ink-faint); font-size: .9rem; text-align: center; padding: 20px;
+}
+.video-placeholder svg { width: 40px; height: 40px; color: var(--accent); opacity: .8; }
+.video-caption { font-size: .82rem; color: var(--ink-faint); margin-top: 2px; }
+
+/* Back link */
+.tut-back { display: inline-flex; align-items: center; gap: 7px; font-size: .9rem; font-weight: 500; color: var(--ink-soft); transition: color .2s; }
+.tut-back:hover { color: var(--accent); }
+.tut-back svg { width: 16px; height: 16px; }
+
 /* ---------- Footer ---------- */
 footer { border-top: 1px solid var(--line); padding: 34px 0; }
 .foot-inner { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 14px; }
