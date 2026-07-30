@@ -285,11 +285,14 @@ section { padding: 64px 0 90px; }
   margin-top: 9px;
 }
 .shot figcaption b { color: var(--ink-soft); font-weight: 600; }
-/* Two side by side once there's room for it */
-@media (min-width: 800px) {
-  .shot-pair { display: grid; grid-template-columns: 1fr 1fr; gap: 22px; }
-  .shot-pair .shot { margin: 18px 0 0; }
+/* Lay screenshots out side by side once there's room — auto-fits 2 or 3 up,
+   then drops to a single column on narrow screens. */
+.shot-pair {
+  display: grid; gap: 22px;
+  grid-template-columns: repeat(auto-fit, minmax(255px, 1fr));
+  align-items: start;
 }
+.shot-pair .shot { margin: 18px 0 0; }
 
 /* Responsive 16:9 video frame */
 .video {
