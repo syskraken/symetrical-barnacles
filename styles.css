@@ -273,6 +273,24 @@ section { padding: 64px 0 90px; }
 }
 .step-cta p { margin-bottom: 20px; }
 
+/* Screenshot figure inside a step */
+.shot { margin: 18px 0 4px; }
+.shot img {
+  display: block; width: 100%; height: auto;
+  border: 1px solid var(--line); border-radius: 12px;
+  background: var(--raise);
+}
+.shot figcaption {
+  font-size: .84rem; color: var(--ink-faint); line-height: 1.55;
+  margin-top: 9px;
+}
+.shot figcaption b { color: var(--ink-soft); font-weight: 600; }
+/* Two side by side once there's room for it */
+@media (min-width: 800px) {
+  .shot-pair { display: grid; grid-template-columns: 1fr 1fr; gap: 22px; }
+  .shot-pair .shot { margin: 18px 0 0; }
+}
+
 /* Responsive 16:9 video frame */
 .video {
   position: relative; width: 100%; aspect-ratio: 16 / 9; margin: 6px 0 4px;

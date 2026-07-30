@@ -93,6 +93,19 @@
           <li>Put it in its own folder &mdash; for example <code>C:\KrakenPrime\</code>. It creates a <code>data\</code> folder beside itself for your settings, so give it somewhere tidy to live.</li>
           <li>Double-click it. Windows SmartScreen will warn you because the build is unsigned &mdash; click <b>More info</b>, then <b>Run anyway</b>.</li>
         </ol>
+
+        <div class="shot-pair">
+          <figure class="shot">
+            <img src="assets/smart-screen.png" alt="Windows Defender SmartScreen dialog reading &quot;Windows protected your PC&quot;, showing App: KrakenPrime.exe and Publisher: Unknown publisher, with Run anyway and Don't run buttons." loading="lazy" />
+            <figcaption>SmartScreen flags the app because it isn't code-signed, not because anything is wrong with it. The <b>Run anyway</b> button only appears after you click <b>More info</b>.</figcaption>
+          </figure>
+
+          <figure class="shot">
+            <img src="assets/uac-prompt.jpg" alt="Windows User Account Control prompt asking whether to allow KrakenPrime.exe from an unknown publisher to make changes to your device, with Yes and No buttons." loading="lazy" />
+            <figcaption>KrakenPrime also asks for administrator rights on first launch. Choose <b>Yes</b> &mdash; it won't finish starting up otherwise.</figcaption>
+          </figure>
+        </div>
+
         <p>You'll get a loading splash, then the main window. The sidebar has <b>Dashboard</b>, <b>Configuration</b>, <b>Auto Upgrade</b>, <b>Live Preview</b>, <b>Raid History</b>, and <b>Donation</b>. Everything in this guide happens in <b>Configuration</b> until the last step.</p>
         <div class="note">
           <b>Keep the folder put.</b> Your pinned coordinates and settings live in <code>data\</code> next to the exe. If you move the exe later, move that folder with it or you'll be re-running the guided setup.
