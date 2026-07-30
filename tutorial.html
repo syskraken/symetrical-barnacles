@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Tutorial — KrakenPrime Configuration Guide</title>
-  <meta name="description" content="Step-by-step tutorial for configuring Kraken Prime — setup, LDPlayer & ADB, deployment presets, auto-upgrade, and running your first farm cycle. With video walkthroughs." />
+  <meta name="description" content="Step-by-step tutorial for configuring Kraken Prime — first run, LDPlayer & ADB, guided setup, deployment presets, auto-upgrade, sleep schedule, and running your first farm cycle." />
   <link rel="icon" href="assets/icon.ico" />
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -18,8 +18,8 @@
   <nav>
     <div class="wrap nav-inner">
       <a href="index.html" class="brand">
-        <img class="mark" src="assets/icon.ico" alt="Kraken Softwares logo" />
-        <span>Kraken</span><b>Softwares</b>
+        <img class="mark" src="assets/icon.ico" alt="KrakenPrime logo" />
+        <span>Kraken</span><b>Prime</b>
       </a>
       <div class="nav-links">
         <a href="tutorial.html">Tutorial</a>
@@ -35,148 +35,247 @@
       Back to home
     </a>
     <h1>KrakenPrime Configuration Guide</h1>
-    <p class="lead">Everything you need to get Kraken Prime up and farming — from first launch and LDPlayer setup to deployment presets and auto-upgrade. Follow along with the video walkthroughs below.</p>
+    <p class="lead">Everything you need to get Kraken Prime up and farming — from first launch and LDPlayer setup through the guided setup battle, presets, and auto-upgrade. Steps 1&ndash;4 are required; 5 and 6 are optional.</p>
   </div>
 
   <div class="wrap">
-    <!-- Section jump links -->
-    <nav class="tut-toc" aria-label="Tutorial sections">
-      <a href="#setup">1 · First Run</a>
+
+    <div class="tut-toc" role="navigation" aria-label="Tutorial sections">
+      <a href="#video">Video</a>
+      <a href="#firstrun">1 · First Run</a>
       <a href="#ldplayer">2 · LDPlayer &amp; ADB</a>
-      <a href="#presets">3 · Deployment Presets</a>
-      <a href="#farming">4 · Farming Settings</a>
-      <a href="#upgrade">5 · Auto-Upgrade</a>
-      <a href="#launch">6 · Start Farming</a>
-    </nav>
+      <a href="#config">3 · Configuration</a>
+      <a href="#guided">4 · Guided Setup</a>
+      <a href="#presets">5 · Presets</a>
+      <a href="#upgrade">6 · Auto-Upgrade</a>
+      <a href="#launch">7 · Start Farming</a>
+      <a href="#trouble">Troubleshooting</a>
+    </div>
 
     <section class="tut-steps">
 
-      <!-- STEP 1 -->
-      <article class="step" id="setup">
+      <!-- VIDEO -->
+      <article class="step" id="video">
         <div class="step-head">
-          <span class="step-num">1</span>
-          <h2>First Run &amp; Setup</h2>
+          <span class="step-num">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:18px;height:18px"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+          </span>
+          <h2>Video walkthrough</h2>
         </div>
-        <p>Download <code>KrakenPrime.exe</code> from the home page and run it — there's no installer. On first launch Windows SmartScreen may warn you; click <b>More info</b> → <b>Run anyway</b>.</p>
-        <ol>
-          <li>Launch <code>KrakenPrime.exe</code>.</li>
-          <li>Work through the <b>setup-readiness checklist</b> on the main screen.</li>
-          <li>Green checks mean you're ready; anything red points to what still needs fixing.</li>
-        </ol>
+        <p>Prefer to watch? This covers the same ground as the written steps below &mdash; launching Kraken Prime, running the guided setup, and reading the readiness checklist.</p>
+
         <div class="video">
-          <!-- Replace SRC with your video: paste a YouTube embed URL or a local file -->
-          <!-- <iframe src="https://www.youtube.com/embed/VIDEO_ID" title="First run walkthrough" allowfullscreen></iframe> -->
-          <div class="video-placeholder">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="m22 8-6 4 6 4V8z"/><rect x="2" y="6" width="14" height="12" rx="2"/></svg>
-            <span>Video coming soon — First run &amp; setup</span>
-          </div>
+          <!--
+            GOOGLE DRIVE VIDEO:
+            1. In Drive, right-click the video → Share → set "General access" to
+               "Anyone with the link" (Viewer). Otherwise it won't play here.
+            2. Copy the link: https://drive.google.com/file/d/FILE_ID/view?usp=sharing
+            3. Paste just the FILE_ID below (between /d/ and /preview).
+          -->
+          <iframe
+            src="https://drive.google.com/file/d/1Xk5wiuPxPbbElBd-QHv3SaZa_o0CAY1g/preview"
+            title="Kraken Prime video tutorial"
+            allow="autoplay; fullscreen"
+            allowfullscreen></iframe>
         </div>
         <p class="video-caption">Walkthrough: launching Kraken Prime and reading the readiness checklist.</p>
+      </article>
+
+      <!-- STEP 1 -->
+      <article class="step" id="firstrun">
+        <div class="step-head">
+          <span class="step-num">1</span>
+          <h2>First run</h2>
+        </div>
+        <p>Kraken Prime is a single executable. There is no installer, and nothing is written to your registry or Program Files.</p>
+        <ol>
+          <li>Download <code>KrakenPrime.exe</code> from the <a href="index.html#download" style="color:var(--accent)">download panel</a>.</li>
+          <li>Put it in its own folder &mdash; for example <code>C:\KrakenPrime\</code>. It creates a <code>data\</code> folder beside itself for your settings, so give it somewhere tidy to live.</li>
+          <li>Double-click it. Windows SmartScreen will warn you because the build is unsigned &mdash; click <b>More info</b>, then <b>Run anyway</b>.</li>
+        </ol>
+        <p>You'll get a loading splash, then the main window. The sidebar has <b>Dashboard</b>, <b>Configuration</b>, <b>Auto Upgrade</b>, <b>Live Preview</b>, <b>Raid History</b>, and <b>Donation</b>. Everything in this guide happens in <b>Configuration</b> until the last step.</p>
+        <div class="note">
+          <b>Keep the folder put.</b> Your pinned coordinates and settings live in <code>data\</code> next to the exe. If you move the exe later, move that folder with it or you'll be re-running the guided setup.
+        </div>
       </article>
 
       <!-- STEP 2 -->
       <article class="step" id="ldplayer">
         <div class="step-head">
           <span class="step-num">2</span>
-          <h2>LDPlayer &amp; ADB Setup</h2>
+          <h2>LDPlayer &amp; ADB</h2>
         </div>
-        <p>Kraken Prime drives Clash of Clans inside <b>LDPlayer</b> over ADB. Configure the emulator once and you're set.</p>
-        <ul>
-          <li>Set the LDPlayer resolution to <b>1600 × 900</b>.</li>
-          <li>Enable <b>ADB debugging</b> in LDPlayer settings.</li>
-          <li>Open Clash of Clans and make sure it's fully loaded before starting the bot.</li>
-        </ul>
-        <div class="video">
-          <div class="video-placeholder">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="m22 8-6 4 6 4V8z"/><rect x="2" y="6" width="14" height="12" rx="2"/></svg>
-            <span>Video coming soon — LDPlayer &amp; ADB configuration</span>
-          </div>
+        <p>Kraken Prime drives Clash of Clans through an Android emulator. It bundles its own copy of ADB, so there is nothing extra to install on the Windows side.</p>
+        <ol>
+          <li>Install <b>LDPlayer</b> and open Clash of Clans in it at least once.</li>
+          <li>Set the emulator resolution to <b>1600 &times; 900</b>. In LDPlayer: <b>Settings &rarr; Display &rarr; Resolution &rarr; Custom</b>, then enter 1600 and 900.</li>
+          <li>Turn on ADB: <b>Settings &rarr; Other settings &rarr; ADB debugging &rarr; Open local connection</b>.</li>
+          <li>Restart the emulator so both changes take effect.</li>
+          <li>Leave Clash of Clans open on the <b>home village</b> screen before you start any setup.</li>
+        </ol>
+        <div class="note note-warn">
+          <b>The resolution really matters.</b> Kraken Prime finds buttons by matching reference images captured at 1600&nbsp;&times;&nbsp;900. At any other resolution the matching degrades and the bot will fail to find the Attack button. This is the single most common cause of "it doesn't do anything".
         </div>
-        <p class="video-caption">Walkthrough: resolution, ADB, and connecting Kraken Prime to LDPlayer.</p>
       </article>
 
       <!-- STEP 3 -->
-      <article class="step" id="presets">
+      <article class="step" id="config">
         <div class="step-head">
           <span class="step-num">3</span>
-          <h2>Deployment Presets</h2>
+          <h2>Configuration</h2>
         </div>
-        <p>Use the <b>visual deployment planner</b> to lay out how troops drop, then save it as a reusable preset.</p>
-        <ol>
-          <li>Open the deployment planner.</li>
-          <li>Place your troops / spells on the layout to define the attack.</li>
-          <li>Save it as a named preset so Kraken Prime deploys it every cycle.</li>
-        </ol>
-        <div class="video">
-          <div class="video-placeholder">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="m22 8-6 4 6 4V8z"/><rect x="2" y="6" width="14" height="12" rx="2"/></svg>
-            <span>Video coming soon — Building a deployment preset</span>
-          </div>
+        <p>Open the <b>Configuration</b> tab. You're telling the bot what your army looks like and what counts as a worthwhile raid. Fill these in before running the guided setup &mdash; the setup uses these numbers to know how many things you'll be pinning.</p>
+
+        <h3>Troops &amp; spells</h3>
+        <ul>
+          <li><b>Troop Types</b> &mdash; how many troop icons sit in your army bar (not the total troop count).</li>
+          <li><b>Heroes</b> &mdash; how many hero icons. Enter <code>0</code> if you have none.</li>
+          <li><b>Spell Types</b> &mdash; how many spell icons. <code>0</code> is fine.</li>
+          <li><b>Per-type counts</b> &mdash; for each type, how many to deploy per raid. These boxes appear once you've set the type counts above.</li>
+        </ul>
+
+        <h3>Sleep schedule <span class="tag">optional</span></h3>
+        <p>Rather than farming non-stop, the bot can work for a stretch, idle on your home village for a break, then resume &mdash; repeating all day.</p>
+        <ul>
+          <li><b>Work period</b> and <b>Work randomness &plusmn;</b> &mdash; e.g. <code>60</code> and <code>5</code> farms for a random 55&ndash;65 minutes.</li>
+          <li><b>Sleep at least / at most</b> &mdash; e.g. <code>20</code> and <code>30</code> breaks for a random 20&ndash;30 minutes. Breaks are capped at 30 minutes.</li>
+        </ul>
+        <p>Both spans are re-rolled every cycle, so the on/off pattern doesn't repeat identically. A raid already in progress is always finished before a break starts. For longer farming stretches, raise <b>Work period</b> &mdash; it has no upper limit.</p>
+
+        <h3>Loot &amp; targets</h3>
+        <ul>
+          <li><b>Minimum Gold</b> &mdash; skip any base below this.</li>
+          <li><b>Minimum Elixir</b> &mdash; optional second criterion. A base qualifies if it beats <em>either</em> threshold.</li>
+        </ul>
+        <div class="note">
+          <b>Elixir needs two things.</b> It's only used as a raid criterion when Minimum Elixir is above 0 <em>and</em> an elixir scout box has been drawn. You'll draw that box during the guided setup in the next step. Until both are true, scouting stays gold-only.
         </div>
-        <p class="video-caption">Walkthrough: creating and saving a deployment preset in the planner.</p>
+        <p>Hit <b>SAVE ALL SETTINGS</b> when you're done.</p>
       </article>
 
       <!-- STEP 4 -->
-      <article class="step" id="farming">
+      <article class="step" id="guided">
         <div class="step-head">
           <span class="step-num">4</span>
-          <h2>Farming Settings</h2>
+          <h2>Guided setup</h2>
         </div>
-        <p>Tune how Kraken Prime scouts and attacks so it only spends troops on bases worth hitting.</p>
+        <p>This is the important one. The bot enters a real battle so you can show it where everything is on <em>your</em> screen. No troops are deployed automatically &mdash; you're only pinning coordinates.</p>
+        <p>With Clash of Clans on the home village, click <b>RUN FULL GUIDED SETUP</b> at the bottom of the Configuration tab. It will:</p>
+        <ol>
+          <li>Clear any popups on your village.</li>
+          <li>Tap <b>Attack</b>.</li>
+          <li>Tap <b>Find a Match</b>.</li>
+          <li>Tap <b>Attack!</b> to confirm, then wait for the battle screen to load.</li>
+          <li>Open the <b>army bar planner</b> &mdash; see below.</li>
+          <li>Zoom the camera out.</li>
+          <li>Open the <b>deployment planner</b> &mdash; see below.</li>
+          <li>End the battle and return home.</li>
+        </ol>
+
+        <h3>Army bar planner</h3>
+        <p>A window opens over a live screenshot with a layer list in the top-right. Pick a layer with its radio button, then mark that layer's positions.</p>
         <ul>
-          <li>Set your minimum loot thresholds (gold / elixir / dark elixir).</li>
-          <li>Choose the deployment preset to use for attacks.</li>
-          <li>Configure the attack cycle and how it scouts for loot.</li>
+          <li><b>Troops</b>, <b>Heroes</b>, <b>Spell 1&hellip;n</b> &mdash; click each matching icon in the army bar at the bottom of the screen. Click them in order; the counter next to each layer turns green when it matches your configured count.</li>
+          <li><b>Gold box</b> and <b>Elixir box</b> &mdash; these are <em>drag</em> layers, not click layers. Drag a rectangle tightly around each loot number at the top of the screen. This is the same screen the bot reads when scouting, which is why both are pinned here.</li>
         </ul>
-        <div class="video">
-          <div class="video-placeholder">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="m22 8-6 4 6 4V8z"/><rect x="2" y="6" width="14" height="12" rx="2"/></svg>
-            <span>Video coming soon — Farming &amp; loot thresholds</span>
-          </div>
+        <p>Elixir is optional &mdash; skip it if you only farm gold. Tick <b>View all</b> to see every layer at once. Then <b>Save &amp; Close</b>.</p>
+
+        <h3>Deployment planner</h3>
+        <p>Same idea, on the zoomed-out battlefield. One layer per troop type, plus Heroes and each spell type. Select a layer, then click on the map wherever you want those troops dropped. The counter shows progress against the per-type counts you set in step 3. <b>Save &amp; Close</b> when every layer is green.</p>
+        <div class="note">
+          <b>Re-pinning later.</b> You don't need to re-run the whole guided setup to adjust things. <b>EDIT PIN TROOP BAR SLOTS</b> and <b>EDIT DEPLOYMENT</b> reopen the same planners any time, and the <b>EDIT GOLD / ELIXIR SCOUT BOX</b> buttons re-draw just those boxes.
         </div>
-        <p class="video-caption">Walkthrough: loot thresholds, preset selection, and the attack cycle.</p>
       </article>
 
       <!-- STEP 5 -->
-      <article class="step" id="upgrade">
+      <article class="step" id="presets">
         <div class="step-head">
           <span class="step-num">5</span>
-          <h2>Auto-Upgrade</h2>
+          <h2>Deployment presets <span class="tag">optional</span></h2>
         </div>
-        <p>Turn on <b>opportunistic auto-upgrade</b> so idle loot goes straight into walls and buildings while the bot runs.</p>
-        <ul>
-          <li>Enable auto-upgrade for <b>walls</b> and/or <b>buildings</b>.</li>
-          <li>Set priorities so the right structures get upgraded first.</li>
-          <li>Kraken Prime spends spare resources between attack cycles automatically.</li>
-        </ul>
-        <div class="video">
-          <div class="video-placeholder">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="m22 8-6 4 6 4V8z"/><rect x="2" y="6" width="14" height="12" rx="2"/></svg>
-            <span>Video coming soon — Auto-upgrade configuration</span>
-          </div>
-        </div>
-        <p class="video-caption">Walkthrough: enabling and prioritizing wall &amp; building upgrades.</p>
+        <p>By default every raid uses the same deployment points. Presets let you save up to four different attack layouts and rotate between them.</p>
+        <ol>
+          <li>In Configuration, turn on <b>Enable preset mode</b>.</li>
+          <li>Choose a <b>Deployment mode</b> &mdash; <code>sequence</code> cycles through them in order, <code>random</code> picks one per raid.</li>
+          <li>Click <b>Add deployment preset</b>, then pin that preset's points in the planner that opens.</li>
+        </ol>
+        <p>Each preset stores its own troop, hero, and spell points. When preset mode is on, the main deployment points are ignored, and the Live Preview shows only the preset currently in use.</p>
       </article>
 
       <!-- STEP 6 -->
-      <article class="step" id="launch">
+      <article class="step" id="upgrade">
         <div class="step-head">
           <span class="step-num">6</span>
-          <h2>Start Farming</h2>
+          <h2>Auto-upgrade <span class="tag">optional</span></h2>
         </div>
-        <p>With everything green on the checklist, start the bot and watch the <b>live preview</b> to confirm it's behaving as expected.</p>
-        <ol>
-          <li>Confirm the readiness checklist is all green.</li>
-          <li>Press <b>Start</b> and monitor the live preview.</li>
-          <li>Leave it running — Kraken Prime farms and upgrades on autopilot.</li>
-        </ol>
-        <div class="video">
-          <div class="video-placeholder">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="m22 8-6 4 6 4V8z"/><rect x="2" y="6" width="14" height="12" rx="2"/></svg>
-            <span>Video coming soon — Running your first farm cycle</span>
-          </div>
+        <p>On the <b>Auto Upgrade</b> tab the bot can spend loot for you between raids. There are two modes.</p>
+        <ul>
+          <li><b>Automatic</b> &mdash; uses Clash's own builder suggestions list. It opens the builder menu, finds a wall suggestion, maximises the batch, and confirms only while the cost is affordable. Nothing to pin.</li>
+          <li><b>Manual</b> &mdash; triggers when a storage is full. Needs more setup: capture a "full" reference clip for gold and/or elixir, and pin the wall and building buttons and targets.</li>
+        </ul>
+        <p>Start with <b>Automatic</b>. It needs no coordinates and is much harder to get wrong. Use <b>Test</b> to run one upgrade pass against the current screen &mdash; make sure the emulator is on the home village first.</p>
+      </article>
+
+      <!-- STEP 7 -->
+      <article class="step" id="launch">
+        <div class="step-head">
+          <span class="step-num">7</span>
+          <h2>Start farming</h2>
         </div>
-        <p class="video-caption">Walkthrough: starting the bot and reading the live preview.</p>
+        <p>Before starting, read the <b>Setup Readiness</b> checklist at the bottom of the Configuration tab. It validates your live settings against the files you've pinned.</p>
+        <ul>
+          <li><b>✅ green</b> &mdash; good to go.</li>
+          <li><b>⚠ amber</b> &mdash; works, but something is unused or inconsistent. Worth reading.</li>
+          <li><b>❌ red</b> &mdash; will block the bot from starting. Fix these first.</li>
+        </ul>
+        <p>With Clash of Clans on the home village, click <b>START BOT</b>. The Dashboard shows:</p>
+        <ul>
+          <li><b>Total Raids</b> &mdash; raid attempts this session.</li>
+          <li><b>Uptime</b> &mdash; how long the bot has been running.</li>
+          <li><b>Working / Sleeping</b> &mdash; if you set up a sleep schedule, this counts down to the next switch. Reads <code>—</code> when no schedule is set.</li>
+          <li><b>System Logs</b> &mdash; live output. This is where you look when something misbehaves.</li>
+        </ul>
+        <p>The <b>Live Preview</b> tab shows the current emulator screen with your pinned points drawn on top &mdash; the fastest way to confirm your coordinates line up with what the game is actually showing.</p>
+      </article>
+
+      <!-- TROUBLESHOOTING -->
+      <article class="step" id="trouble">
+        <div class="step-head">
+          <span class="step-num">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:18px;height:18px"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/></svg>
+          </span>
+          <h2>Troubleshooting</h2>
+        </div>
+
+        <dl class="faq">
+          <dt>Windows says the app is unrecognised</dt>
+          <dd>The build is unsigned. Click <b>More info</b> &rarr; <b>Run anyway</b>. If your antivirus quarantines it, add its folder as an exclusion &mdash; single-file bundles are a common false positive.</dd>
+
+          <dt>"Could not find Attack button"</dt>
+          <dd>Almost always the emulator resolution. Confirm LDPlayer is at 1600&nbsp;&times;&nbsp;900 and restart it. Also check Clash is on the home village and not sitting behind a popup or event dialog.</dd>
+
+          <dt>Troops deploy in the wrong places</dt>
+          <dd>Your pins were made against a different camera position. Reopen <b>EDIT DEPLOYMENT</b> and re-pin. Check the Live Preview afterwards to confirm the dots sit where you expect.</dd>
+
+          <dt>Minimum Elixir seems to be ignored</dt>
+          <dd>Elixir only counts when Minimum Elixir is above 0 <em>and</em> an elixir scout box exists. Use <b>EDIT ELIXIR SCOUT BOX</b>, or re-run the guided setup and draw it in the army bar planner. The readiness checklist warns about exactly this case.</dd>
+
+          <dt>The bot stops finding anything after a while</dt>
+          <dd>Clash drops its connection when left idle and covers the screen with a <b>RELOAD</b> button. The bot taps it and waits for the Attack button to confirm the village is back &mdash; but it needs a <code>reload_btn.png</code> reference in its <code>templates\</code> folder to recognise it. Crop that button from a 1600&nbsp;&times;&nbsp;900 screenshot if your build doesn't include one.</dd>
+
+          <dt>Settings vanished after moving the exe</dt>
+          <dd>Configuration lives in the <code>data\</code> folder next to the executable. Move that folder along with the exe, or re-run the guided setup in the new location.</dd>
+        </dl>
+      </article>
+
+      <!-- CTA -->
+      <article class="step step-cta">
+        <h2>Ready to start?</h2>
+        <p>Grab the latest build and work through steps 1&ndash;4. Fifteen minutes and you're farming.</p>
+        <a class="btn btn-primary" href="index.html#download">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+          Download Kraken Prime
+        </a>
       </article>
 
     </section>
@@ -186,10 +285,10 @@
   <footer style="margin-top: 70px;">
     <div class="wrap foot-inner">
       <a href="index.html" class="brand">
-        <img class="mark" src="assets/icon.ico" alt="Kraken Softwares logo" />
-        <span>Kraken</span><b>Softwares</b>
+        <img class="mark" src="assets/icon.ico" alt="KrakenPrime logo" />
+        <span>Kraken</span><b>Prime</b>
       </a>
-      <p>© 2026 Kraken Softwares · Clean, honest downloads · Nothing bundled</p>
+      <p>© 2026 KrakenPrime · Clean, honest downloads · Nothing bundled</p>
     </div>
   </footer>
 
