@@ -189,6 +189,22 @@ section { padding: 64px 0 90px; }
 .btn-ghost:hover { border-color: var(--accent); color: var(--accent); background: var(--accent-soft); }
 .btn-ghost svg { width: 16px; height: 16px; }
 
+/* ---------- Note section (home) ---------- */
+.note-sec { border-top: 1px solid var(--line-soft); padding: 60px 0 70px; }
+.note-card {
+  max-width: 62ch; margin-inline: auto;
+  background: var(--raise); border: 1px solid var(--line-soft);
+  border-left: 3px solid var(--accent); border-radius: 0;
+  padding: 26px 30px;
+}
+.note-card h2 {
+  font-family: var(--font-display); font-weight: 400; letter-spacing: -0.01em;
+  font-size: 1.35rem; line-height: 1.2; margin-bottom: 12px;
+}
+.note-card p { color: var(--ink-soft); font-size: .96rem; line-height: 1.7; margin-bottom: 12px; }
+.note-card p:last-child { margin-bottom: 0; }
+.note-card b { color: var(--ink); font-weight: 600; }
+
 /* ---------- Tutorial page ---------- */
 .tut-hero { padding: 60px 0 30px; text-align: center; }
 .tut-hero h1 {
