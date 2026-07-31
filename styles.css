@@ -5,8 +5,9 @@
   --ink:       #23211c;
   --ink-soft:  #55514a;
   --ink-faint: #8a857b;
-  --accent:    #c96442;   /* clay / coral */
+  --accent:    #c96442;   /* clay / coral — matches the logo body (#c06050) */
   --accent-soft:#f2e4dd;
+  --logo-shade: #5c3345;  /* deep plum from the logo's shading (#503050) */
   --line:      #e7e3d9;
   --line-soft: #efece4;
 
@@ -38,9 +39,10 @@ nav {
 }
 .nav-inner { display: flex; align-items: center; justify-content: space-between; padding: 16px 0; }
 .brand { display: flex; align-items: center; gap: 9px; font-weight: 600; font-size: 1.12rem; letter-spacing: -0.01em; }
-.brand .mark { width: 20px; height: 20px; object-fit: contain; }
-.brand b { font-weight: 600; }
+.brand .mark { width: 24px; height: 24px; object-fit: contain; }
+/* Wordmark colours sampled from the logo: coral body + deep plum shading. */
 .brand span { color: var(--accent); }
+.brand b { font-weight: 600; color: var(--logo-shade); }
 .nav-links { display: flex; align-items: center; gap: 30px; }
 .nav-links a { color: var(--ink-soft); font-size: .93rem; font-weight: 500; transition: color .2s; }
 .nav-links a:hover { color: var(--ink); }
@@ -119,6 +121,18 @@ section { padding: 64px 0 90px; }
 }
 .dl-note svg { width: 17px; height: 17px; color: var(--accent); flex-shrink: 0; margin-top: 2px; }
 .dl-note b { color: var(--ink); font-weight: 600; }
+
+/* ---------- How it works (home) ---------- */
+.mech { border-top: 1px solid var(--line-soft); padding: 74px 0 80px; }
+.mech-fig { margin: 8px 0 0; }
+.mech-fig img {
+  display: block; width: 100%; height: auto; max-width: 780px;
+  margin-inline: auto;
+}
+.mech-note {
+  max-width: 60ch; margin: 26px auto 0; text-align: center;
+  font-size: .92rem; color: var(--ink-faint); line-height: 1.65;
+}
 
 /* ---------- Getting started (home) ---------- */
 .how { border-top: 1px solid var(--line-soft); padding: 74px 0 90px; }
